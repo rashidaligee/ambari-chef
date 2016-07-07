@@ -17,18 +17,22 @@ directory config_dir do
   recursive true
 end
 
-template "#{config_dir}ambari.properties" do
-   source 'ambari.properties.erb'
-   mode '0644'
-   subscribes :run, 'package ambari-server'
-end
+#template "#{config_dir}ambari.properties" do
+#   source 'ambari.properties.erb'
+#   mode '0644'
+#   subscribes :run, 'package ambari-server'
+#end
 
-template "#{config_dir}password.dat" do
-   source 'password.dat.erb'
-   mode '0644'
+#template "#{config_dir}password.dat" do
+#   source 'password.dat.erb'
+#   mode '0644'
+#end
+
+execute 'ambari-server setup -s' do
+  command 'ambari-server setup -s'
 end
 
 execute 'ambari-server start' do
-  only_if 'template "#{config_dir}/ambari.prorperties"'
+#  only_if 'template "#{config_dir}/ambari.prorperties"'
   command 'ambari-server start'
 end

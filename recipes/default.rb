@@ -6,7 +6,7 @@
 
 include_recipe "apt"
 include_recipe "java"
-include_recipe "mysql_connector::j"
+#include_recipe "mysql_connector::j"
 
 # dependencies
 %w{wget curl unzip tar python2.7 openssl libpq5 postgresql postgresql-9.1 postgresql-client-9.1 postgresql-client-common postgresql-common ssl-cert}.each do |pkg|

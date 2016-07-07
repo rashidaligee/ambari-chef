@@ -1,3 +1,3 @@
-I, [2016-07-06T21:43:27.310460 #54807]  INFO -- Kitchen: -----> Starting Kitchen (v1.7.3)
-I, [2016-07-06T21:43:27.861917 #54807]  INFO -- Kitchen: -----> Destroying <default-precise64>...
-I, [2016-07-06T21:43:31.807851 #54807]  INFO -- Kitchen: -----> Kitchen is finished. (0m4.50s)
+I, [2016-07-07T18:33:20.376294 #84330]  INFO -- Kitchen: -----> Starting Kitchen (v1.7.3)
+I, [2016-07-07T18:33:21.330394 #84330]  INFO -- Kitchen: -----> Destroying <default-precise64>...
+I, [2016-07-07T18:33:25.211034 #84330]  INFO -- Kitchen: -----> Kitchen is finished. (0m4.83s)

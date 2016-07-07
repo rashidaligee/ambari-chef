@@ -21,6 +21,5 @@ template "#{config_dir}ambari-agent.ini" do
 end
 
 execute 'ambari-agent start' do
-  only_if 'template "#{config_dir}/ambari-agent.ini"'
   command 'ambari-agent start'
 end
