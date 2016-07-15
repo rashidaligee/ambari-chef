@@ -4,7 +4,7 @@
 #
 # Copyright (c) 2016 Artem Ervits, All Rights Reserved.
 
-package "ambari-agent" do
+package 'ambari-agent' do
 end
 
 # template requires a directory created
@@ -15,9 +15,9 @@ directory config_dir do
 end
 
 template "#{config_dir}ambari-agent.ini" do
-   source 'ambari-agent.ini.erb'
-   mode '0644'
-#   subscribes :run, 'package ambari-agent'
+  source 'ambari-agent.ini.erb'
+  mode '0644'
+  # subscribes :run, 'package ambari-agent'
 end
 
 execute 'ambari-agent start' do
