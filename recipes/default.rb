@@ -15,8 +15,7 @@ include_recipe 'java'
 end
 
 apt_repository 'ambari' do
-  # only_if { node['smartsense-chef']['use_local_repo'] }
-  uri 'http://public-repo-1.hortonworks.com/ambari/ubuntu12/2.x/updates/2.2.2.0'
+  uri 'http://public-repo-1.hortonworks.com/ambari/ubuntu12/2.x/updates/2.4.1.0'
   components ['main']
   distribution 'Ambari'
   action :add
