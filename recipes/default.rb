@@ -9,14 +9,13 @@ include_recipe 'java'
 # include_recipe 'mysql_connector::j'
 
 # dependencies
-%w(wget curl unzip tar python2.7 openssl libpq5 postgresql postgresql-9.1 postgresql-client-9.1 postgresql-client-common postgresql-common ssl-cert).each do |pkg|
+%w(openssh-client wget curl unzip tar python2.7 openssl libpq5 postgresql postgresql-client-common postgresql-common ssl-cert).each do |pkg|
   package pkg do
   end
 end
 
 apt_repository 'ambari' do
-  # only_if { node['smartsense-chef']['use_local_repo'] }
-  uri 'http://public-repo-1.hortonworks.com/ambari/ubuntu12/2.x/updates/2.2.2.0'
+  uri 'http://public-repo-1.hortonworks.com/ambari/ubuntu14/2.x/updates/2.4.1.0'
   components ['main']
   distribution 'Ambari'
   action :add
@@ -27,4 +26,4 @@ apt_repository 'ambari' do
 end
 
 include_recipe 'ambari-chef::ambari_server_setup'
-include_recipe 'ambari-chef::ambari_agent_setup'
+#include_recipe 'ambari-chef::ambari_agent_setup'
