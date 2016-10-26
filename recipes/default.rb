@@ -25,5 +25,5 @@ apt_repository 'ambari' do
   key 'B9733A7A07513CAD'
 end
 
-#include_recipe 'ambari-chef::ambari_server_setup'
+include_recipe 'ambari-chef::ambari_server_setup'
 #include_recipe 'ambari-chef::ambari_agent_setup'

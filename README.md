@@ -20,6 +20,11 @@ Dependencies
 - https://github.com/agileorbit-cookbooks/java.git
 - https://github.com/chef-cookbooks/apt
 
+Software Dependencies
+=====================
+Vagrant: 1.8.6
+VirtualBox: 5.1.8
+
 Usage
 =====
 
