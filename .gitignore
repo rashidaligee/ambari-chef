@@ -1,2 +1,4 @@
 .kitchen/
+.kitchen/*
 .kitchen.local.yml
+Vagrantfile
