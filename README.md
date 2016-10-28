@@ -14,6 +14,10 @@ Requirements
 
 Please see [latest documentation](http://docs.hortonworks.com/HDPDocuments/Ambari-2.2.2.0/bk_ambari_views_guide/content/ch_using_ambari_views.html).
 
+For Ambari Views, it is required to add the following properties in the custom core-site
+`hadoop.proxyuser.root.groups=*`
+`hadoop.proxyuser.root.hosts=*`
+
 Dependencies
 ============
 
