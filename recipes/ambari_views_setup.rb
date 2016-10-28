@@ -27,7 +27,7 @@ bash 'update instance of Files view' do
       "webhdfs.ha.namenode.rpc-address.nn2" : "u1202.ambari.apache.org:8020",
       "webhdfs.ha.namenodes.list" : "nn1,nn2",
       "webhdfs.nameservices" : "hacluster",
-      "webhdfs.url" : "webhdfs://u1202.ambari.apache.org:50070"
+      "webhdfs.url" : "webhdfs://hacluster"
       }
     }
 }'
