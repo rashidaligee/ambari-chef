@@ -4,15 +4,10 @@
 #
 # Copyright (c) 2016 The Authors, All Rights Reserved.
 
+# create an instance of Files View
 bash 'create instance of Files view' do
   code <<-EOH
-    curl --user admin:admin -i -H 'X-Requested-By: ambari' -X POST http://localhost:8080/api/v1/views/FILES/versions/1.0.0/instances/FILES_NEW_INSTANCE
-    EOH
-end
-
-bash 'update instance of Files view' do
-  code <<-EOH
-    curl --user admin:admin -i -H 'X-Requested-By: ambari' -X PUT http://localhost:8080/api/v1/views/FILES/versions/1.0.0/instances/FILES_NEW_INSTANCE \
+    curl --user admin:admin -i -H 'X-Requested-By: ambari' -X POST http://localhost:8080/api/v1/views/FILES/versions/1.0.0/instances/FILES_NEW_INSTANCE \
 --data '{
   "ViewInstanceInfo" : {
       "description" : "Files API",
@@ -28,6 +23,39 @@ bash 'update instance of Files view' do
       "webhdfs.ha.namenodes.list" : "nn1,nn2",
       "webhdfs.nameservices" : "hacluster",
       "webhdfs.url" : "webhdfs://hacluster"
+      }
+    }
+}'
+    EOH
+end
+
+# create an instance of Hive View
+bash 'create instance of Hive view' do
+  code <<-EOH
+curl --user admin:admin -i -H 'X-Requested-By: ambari' -X POST http://localhost:8080/api/v1/views/HIVE/versions/1.0.0/instances/HIVE_NEW_INSTANCE \
+--data '{
+  "ViewInstanceInfo" : {
+      "description" : "Hive View",
+      "label" : "Hive View",
+      "properties" : {
+      "webhdfs.client.failover.proxy.provider" : "org.apache.hadoop.hdfs.server.namenode.ha.ConfiguredFailoverProxyProvider",
+      "webhdfs.ha.namenode.http-address.nn1" : "u1201.ambari.apache.org:50070",
+      "webhdfs.ha.namenode.http-address.nn2" : "u1201.ambari.apache.org:50070",
+      "webhdfs.ha.namenode.https-address.nn1" : null,
+      "webhdfs.ha.namenode.https-address.nn2" : null,
+      "webhdfs.ha.namenode.rpc-address.nn1" : "u1201.ambari.apache.org:8020",
+      "webhdfs.ha.namenode.rpc-address.nn2" : "u1202.ambari.apache.org:8020",
+      "webhdfs.ha.namenodes.list" : "nn1,nn2",
+      "webhdfs.nameservices" : "hacluster",
+      "webhdfs.url" : "webhdfs://hacluster",
+      "hive.host" : "u1203.ambari.apache.org",
+      "hive.http.path" : "cliservice",
+      "hive.http.port" : "10001",
+      "hive.metastore.warehouse.dir" : "/apps/hive/warehouse",
+      "hive.port" : "10000",
+      "hive.transport.mode" : "binary",
+      "yarn.ats.url" : "http://u1202.ambari.apache.org:8188",
+      "yarn.resourcemanager.url" : "u1202.ambari.apache.org:8088"
       }
     }
 }'
