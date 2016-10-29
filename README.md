@@ -33,7 +33,7 @@ VirtualBox: 5.1.8
 Usage
 =====
 
-Add `ambari-chef` to your node's `run_list`.
+Add `ambari-chef::default` to your node's `run_list`.
 
 Testing
 =======
