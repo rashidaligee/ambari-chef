@@ -3,11 +3,11 @@ This cookbook installs and configures Ambari Server, Agent and Views.
 TODO
 ====
 
-1. deploy Ambari Views
 2. define Ambari heapsize
 3. take care of dependencies, i.e. OpenSSL (v1.01, build 16 or later)
-4. currently requires Postgres to install but not to configure
 5. how to get checksum info for ambari-server?
+6. add views for Hive 1.5, WFD, Pig, etc.
+7. externalize view properties into attributes
 
 Requirements
 ============
@@ -15,6 +15,7 @@ Requirements
 Please see [latest documentation](http://docs.hortonworks.com/HDPDocuments/Ambari-2.2.2.0/bk_ambari_views_guide/content/ch_using_ambari_views.html).
 
 For Ambari Views, it is required to add the following properties in the custom core-site
+
 `hadoop.proxyuser.root.groups=*`
 `hadoop.proxyuser.root.hosts=*`
 
@@ -32,7 +33,7 @@ VirtualBox: 5.1.8
 Usage
 =====
 
-Add `ambari-views-chef` to your node's `run_list`.
+Add `ambari-chef` to your node's `run_list`.
 
 Testing
 =======
