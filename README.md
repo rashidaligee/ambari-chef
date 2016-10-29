@@ -48,4 +48,4 @@ A `.kitchen.yaml` file is provided.
 Technical Support
 =================
 
-This cookbook is provided without any warranties. Use at your own risk. To file a bug report, please respond on [this thread](https://community.hortonworks.com/content/repo/38515/smartsense-chef-cookbook-for-non-ambari-install.html).
+This cookbook is provided without any warranties. Use at your own risk. To file a bug report, please respond on [this thread](https://community.hortonworks.com/repos/64032/ambari-chef.html).
