@@ -4,9 +4,6 @@
 #
 # Copyright (c) 2016 Artem Ervits, All Rights Reserved.
 
-# install Ambari server with MySQL
-# mysql_connector_j '/usr/share/java'
-
 package 'ambari-server' do
 end
 
