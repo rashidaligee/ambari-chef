@@ -29,7 +29,14 @@ execute 'ambari-server setup -s' do
   command 'ambari-server setup -s'
 end
 
+service 'ambari-server status' do
+  supports :status => true
+  status_command 'ambari-server status'
+#  action :start
+end
+
 execute 'ambari-server start' do
-  # only_if 'template "#{config_dir}/ambari.prorperties"'
+  # only_if 'template "#{config_dir}/ambari.prorperties"' 
   command 'ambari-server start'
+  not_if 'ambari-server status'
 end
