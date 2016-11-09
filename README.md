@@ -8,6 +8,7 @@ TODO
 5. how to get checksum info for ambari-server?
 6. add views for Hive 1.5, WFD, Pig, etc.
 7. externalize view properties into attributes
+8. HDP 2.5 does not work with this version of ambari-chef
 
 Requirements
 ============
