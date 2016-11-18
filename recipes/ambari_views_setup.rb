@@ -15,7 +15,7 @@ bash 'create instance of Files view' do
       "properties" : {
       "webhdfs.client.failover.proxy.provider" : "org.apache.hadoop.hdfs.server.namenode.ha.ConfiguredFailoverProxyProvider",
       "webhdfs.ha.namenode.http-address.nn1" : "u1201.ambari.apache.org:50070",
-      "webhdfs.ha.namenode.http-address.nn2" : "u1201.ambari.apache.org:50070",
+      "webhdfs.ha.namenode.http-address.nn2" : "u1202.ambari.apache.org:50070",
       "webhdfs.ha.namenode.https-address.nn1" : "u1201.ambari.apache.org:50470",
       "webhdfs.ha.namenode.https-address.nn2" : "u1202.ambari.apache.org:50470",
       "webhdfs.ha.namenode.rpc-address.nn1" : "u1201.ambari.apache.org:8020",
@@ -40,7 +40,7 @@ curl --user admin:admin -i -H 'X-Requested-By: ambari' -X POST http://localhost:
       "properties" : {
       "webhdfs.client.failover.proxy.provider" : "org.apache.hadoop.hdfs.server.namenode.ha.ConfiguredFailoverProxyProvider",
       "webhdfs.ha.namenode.http-address.nn1" : "u1201.ambari.apache.org:50070",
-      "webhdfs.ha.namenode.http-address.nn2" : "u1201.ambari.apache.org:50070",
+      "webhdfs.ha.namenode.http-address.nn2" : "u1202.ambari.apache.org:50070",
       "webhdfs.ha.namenode.https-address.nn1" : "u1201.ambari.apache.org:50470",
       "webhdfs.ha.namenode.https-address.nn2" : "u1202.ambari.apache.org:50470",
       "webhdfs.ha.namenode.rpc-address.nn1" : "u1201.ambari.apache.org:8020",
@@ -73,7 +73,7 @@ curl --user admin:admin -i -H 'X-Requested-By: ambari' -X POST http://localhost:
       "properties" : {
       "webhdfs.client.failover.proxy.provider" : "org.apache.hadoop.hdfs.server.namenode.ha.ConfiguredFailoverProxyProvider",
       "webhdfs.ha.namenode.http-address.nn1" : "u1201.ambari.apache.org:50070",
-      "webhdfs.ha.namenode.http-address.nn2" : "u1201.ambari.apache.org:50070",
+      "webhdfs.ha.namenode.http-address.nn2" : "u1202.ambari.apache.org:50070",
       "webhdfs.ha.namenode.https-address.nn1" : "u1201.ambari.apache.org:50470",
       "webhdfs.ha.namenode.https-address.nn2" : "u1202.ambari.apache.org:50470",
       "webhdfs.ha.namenode.rpc-address.nn1" : "u1201.ambari.apache.org:8020",
@@ -124,7 +124,7 @@ curl --user admin:admin -i -H 'X-Requested-By: ambari' -X POST http://localhost:
       "properties" : {
       "webhdfs.client.failover.proxy.provider" : "org.apache.hadoop.hdfs.server.namenode.ha.ConfiguredFailoverProxyProvider",
       "webhdfs.ha.namenode.http-address.nn1" : "u1201.ambari.apache.org:50070",
-      "webhdfs.ha.namenode.http-address.nn2" : "u1201.ambari.apache.org:50070",
+      "webhdfs.ha.namenode.http-address.nn2" : "u1202.ambari.apache.org:50070",
       "webhdfs.ha.namenode.https-address.nn1" : "u1201.ambari.apache.org:50470",
       "webhdfs.ha.namenode.https-address.nn2" : "u1202.ambari.apache.org:50470",
       "webhdfs.ha.namenode.rpc-address.nn1" : "u1201.ambari.apache.org:8020",
