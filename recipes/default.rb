@@ -18,7 +18,6 @@ apt_repository 'ambari' do
   distribution 'Ambari'
   action :add
 
-  # requires Chef 12.9
   keyserver 'keyserver.ubuntu.com'
   key 'B9733A7A07513CAD'
 

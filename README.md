@@ -6,14 +6,13 @@ TODO
 2. define Ambari heapsize
 3. take care of dependencies, i.e. OpenSSL (v1.01, build 16 or later)
 5. how to get checksum info for ambari-server?
-6. add views for Hive 1.5, WFD, Pig, etc.
 7. externalize view properties into attributes
 8. HDP 2.5 does not work with this version of ambari-chef
 
 Requirements
 ============
 
-Please see [latest documentation](http://docs.hortonworks.com/HDPDocuments/Ambari-2.2.2.0/bk_ambari_views_guide/content/ch_using_ambari_views.html).
+Please see [latest documentation](http://docs.hortonworks.com/HDPDocuments/Ambari-2.4.2.0/bk_ambari-views/content/ch_using_ambari_views.html).
 
 For Ambari Views, it is required to add the following properties in the custom core-site
 
@@ -29,7 +28,7 @@ Dependencies
 Software Dependencies
 =====================
 Vagrant: 1.8.6
-VirtualBox: 5.1.8
+VirtualBox: 5.1.10
 
 Usage
 =====
