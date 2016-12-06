@@ -98,7 +98,7 @@ end
 # create an instance of Tez View
 bash 'create instance of Tez view' do
   code <<-EOH
-curl --user admin:admin -i -H 'X-Requested-By: ambari' -X POST http://localhost:8080/api/v1/views/TEZ/versions/0.7.0.2.5.0.0-22/instances/TEZ_NEW_INSTANCE \
+curl --user admin:admin -i -H 'X-Requested-By: ambari' -X POST http://localhost:8080/api/v1/views/TEZ/versions/0.7.0.2.5.3.0-136/instances/TEZ_NEW_INSTANCE \
 --data '{
   "ViewInstanceInfo" : {
       "description" : "Tez View",

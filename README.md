@@ -8,6 +8,7 @@ TODO
 5. how to get checksum info for ambari-server?
 7. externalize view properties into attributes
 8. HDP 2.5 does not work with this version of ambari-chef
+9. TEZ view has different version naming convention, externalize with variable
 
 Requirements
 ============
