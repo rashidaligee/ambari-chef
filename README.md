@@ -9,6 +9,7 @@ TODO
 7. externalize view properties into attributes
 8. HDP 2.5 does not work with this version of ambari-chef
 9. TEZ view has different version naming convention, externalize with variable
+10. In Ambari 2.4.2 Hive 1.5 view is failing due to https://issues.apache.org/jira/browse/AMBARI-18387
 
 Requirements
 ============
