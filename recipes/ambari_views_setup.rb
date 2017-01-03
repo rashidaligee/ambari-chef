@@ -139,3 +139,29 @@ curl --user admin:admin -i -H 'X-Requested-By: ambari' -X POST http://localhost:
 }'
     EOH
 end
+
+# create an instance of Workflow Manager View
+bash 'create instance of Workflow Manager view' do
+  code <<-EOH
+curl --user admin:admin -i -H 'X-Requested-By: ambari' -X POST http://localhost:8080/api/v1/views/WORKFLOW_MANAGER/versions/1.0.0/instances/WF_NEW_INSTANCE \
+--data '{
+  "ViewInstanceInfo" : {
+      "description" : "Workflow Manager View",
+      "label" : "Workflow Manager View",
+      "properties" : {
+      "webhdfs.client.failover.proxy.provider" : "org.apache.hadoop.hdfs.server.namenode.ha.ConfiguredFailoverProxyProvider",
+      "webhdfs.ha.namenode.http-address.nn1" : "u1201.ambari.apache.org:50070",
+      "webhdfs.ha.namenode.http-address.nn2" : "u1202.ambari.apache.org:50070",
+      "webhdfs.ha.namenode.https-address.nn1" : "u1201.ambari.apache.org:50470",
+      "webhdfs.ha.namenode.https-address.nn2" : "u1202.ambari.apache.org:50470",
+      "webhdfs.ha.namenode.rpc-address.nn1" : "u1201.ambari.apache.org:8020",
+      "webhdfs.ha.namenode.rpc-address.nn2" : "u1202.ambari.apache.org:8020",
+      "webhdfs.ha.namenodes.list" : "nn1,nn2",
+      "webhdfs.nameservices" : "hacluster",
+      "webhdfs.url" : "webhdfs://hacluster",
+      "oozie.service.uri" : "http://u1203.ambari.apache.org:11000/oozie"
+      }
+    }
+}'
+    EOH
+end
