@@ -158,8 +158,10 @@ curl --user admin:admin -i -H 'X-Requested-By: ambari' -X POST http://localhost:
       "webhdfs.ha.namenode.rpc-address.nn2" : "u1202.ambari.apache.org:8020",
       "webhdfs.ha.namenodes.list" : "nn1,nn2",
       "webhdfs.nameservices" : "hacluster",
-      "webhdfs.url" : "webhdfs://hacluster",
-      "oozie.service.uri" : "http://u1203.ambari.apache.org:11000/oozie"
+      "webhdfs.url" : "hdfs://hacluster",
+      "oozie.service.uri" : "http://u1203.ambari.apache.org:11000/oozie",
+      "hadoop.security.authentication" : "simple",
+      "yarn.resourcemanager.address" : "http://u1202.ambari.apache.org"
       }
     }
 }'
