@@ -104,9 +104,9 @@ curl --user admin:admin -i -H 'X-Requested-By: ambari' -X POST http://localhost:
       "description" : "Tez View",
       "label" : "Tez View",
       "properties" : {
-      "webhdfs.url" : "webhdfs://hacluster",
-      "yarn.ats.url" : "http://u1202.ambari.apache.org:8188",
-      "yarn.resourcemanager.url" : "u1202.ambari.apache.org:8088"
+      "webhdfs.url" : "#{node['ambari-chef']['webhdfs.url']}",
+      "yarn.ats.url" : "#{node['ambari-chef']['yarn.ats.url']}",
+      "yarn.resourcemanager.url" : "#{node['ambari-chef']['yarn.resourcemanager.url']}"
       }
     }
 }'
