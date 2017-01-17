@@ -13,16 +13,16 @@ bash 'create instance of Files view' do
       "description" : "Files API",
       "label" : "Files View",
       "properties" : {
-      "webhdfs.client.failover.proxy.provider" : "org.apache.hadoop.hdfs.server.namenode.ha.ConfiguredFailoverProxyProvider",
-      "webhdfs.ha.namenode.http-address.nn1" : "u1201.ambari.apache.org:50070",
-      "webhdfs.ha.namenode.http-address.nn2" : "u1202.ambari.apache.org:50070",
-      "webhdfs.ha.namenode.https-address.nn1" : "u1201.ambari.apache.org:50470",
-      "webhdfs.ha.namenode.https-address.nn2" : "u1202.ambari.apache.org:50470",
-      "webhdfs.ha.namenode.rpc-address.nn1" : "u1201.ambari.apache.org:8020",
-      "webhdfs.ha.namenode.rpc-address.nn2" : "u1202.ambari.apache.org:8020",
-      "webhdfs.ha.namenodes.list" : "nn1,nn2",
-      "webhdfs.nameservices" : "hacluster",
-      "webhdfs.url" : "webhdfs://hacluster"
+      "webhdfs.client.failover.proxy.provider" : "#{node['ambari-chef']['webhdfs.client.failover.proxy.provider']}",
+      "webhdfs.ha.namenode.http-address.nn1" : "#{node['ambari-chef']['webhdfs.ha.namenode.http-address.nn1']}",
+      "webhdfs.ha.namenode.http-address.nn2" : "#{node['ambari-chef']['webhdfs.ha.namenode.http-address.nn2']}",
+      "webhdfs.ha.namenode.https-address.nn1" : "#{node['ambari-chef']['webhdfs.ha.namenode.https-address.nn1']}",
+      "webhdfs.ha.namenode.https-address.nn2" : "#{node['ambari-chef']['webhdfs.ha.namenode.https-address.nn2']}",
+      "webhdfs.ha.namenode.rpc-address.nn1" : "#{node['ambari-chef']['webhdfs.ha.namenode.rpc-address.nn1']}",
+      "webhdfs.ha.namenode.rpc-address.nn2" : "#{node['ambari-chef']['webhdfs.ha.namenode.rpc-address.nn2']}",
+      "webhdfs.ha.namenodes.list" : "#{node['ambari-chef']['webhdfs.ha.namenodes.list']}",
+      "webhdfs.nameservices" : "#{node['ambari-chef']['webhdfs.nameservices']}",
+      "webhdfs.url" : "#{node['ambari-chef']['webhdfs.url']}"
       }
     }
 }'
@@ -38,24 +38,24 @@ curl --user admin:admin -i -H 'X-Requested-By: ambari' -X POST http://localhost:
       "description" : "Hive View",
       "label" : "Hive View",
       "properties" : {
-      "webhdfs.client.failover.proxy.provider" : "org.apache.hadoop.hdfs.server.namenode.ha.ConfiguredFailoverProxyProvider",
-      "webhdfs.ha.namenode.http-address.nn1" : "u1201.ambari.apache.org:50070",
-      "webhdfs.ha.namenode.http-address.nn2" : "u1202.ambari.apache.org:50070",
-      "webhdfs.ha.namenode.https-address.nn1" : "u1201.ambari.apache.org:50470",
-      "webhdfs.ha.namenode.https-address.nn2" : "u1202.ambari.apache.org:50470",
-      "webhdfs.ha.namenode.rpc-address.nn1" : "u1201.ambari.apache.org:8020",
-      "webhdfs.ha.namenode.rpc-address.nn2" : "u1202.ambari.apache.org:8020",
-      "webhdfs.ha.namenodes.list" : "nn1,nn2",
-      "webhdfs.nameservices" : "hacluster",
-      "webhdfs.url" : "webhdfs://hacluster",
-      "hive.host" : "u1203.ambari.apache.org",
-      "hive.http.path" : "cliservice",
-      "hive.http.port" : "10001",
-      "hive.metastore.warehouse.dir" : "/apps/hive/warehouse",
-      "hive.port" : "10000",
-      "hive.transport.mode" : "binary",
-      "yarn.ats.url" : "http://u1202.ambari.apache.org:8188",
-      "yarn.resourcemanager.url" : "u1202.ambari.apache.org:8088"
+      "webhdfs.client.failover.proxy.provider" : "#{node['ambari-chef']['webhdfs.client.failover.proxy.provider']}",
+      "webhdfs.ha.namenode.http-address.nn1" : "#{node['ambari-chef']['webhdfs.ha.namenode.http-address.nn1']}",
+      "webhdfs.ha.namenode.http-address.nn2" : "#{node['ambari-chef']['webhdfs.ha.namenode.http-address.nn2']}",
+      "webhdfs.ha.namenode.https-address.nn1" : "#{node['ambari-chef']['webhdfs.ha.namenode.https-address.nn1']}",
+      "webhdfs.ha.namenode.https-address.nn2" : "#{node['ambari-chef']['webhdfs.ha.namenode.https-address.nn2']}",
+      "webhdfs.ha.namenode.rpc-address.nn1" : "#{node['ambari-chef']['webhdfs.ha.namenode.rpc-address.nn1']}",
+      "webhdfs.ha.namenode.rpc-address.nn2" : "#{node['ambari-chef']['webhdfs.ha.namenode.rpc-address.nn2']}",
+      "webhdfs.ha.namenodes.list" : "#{node['ambari-chef']['webhdfs.ha.namenodes.list']}",
+      "webhdfs.nameservices" : "#{node['ambari-chef']['webhdfs.nameservices']}",
+      "webhdfs.url" : "#{node['ambari-chef']['webhdfs.url']}",
+      "hive.host" : "#{node['ambari-chef']['hive.host']}",
+      "hive.http.path" : "#{node['ambari-chef']['hive.http.path']}",
+      "hive.http.port" : "#{node['ambari-chef']['hive.http.port']}",
+      "hive.metastore.warehouse.dir" : "#{node['ambari-chef']['hive.metastore.warehouse.dir']}",
+      "hive.port" : "#{node['ambari-chef']['hive.port']}",
+      "hive.transport.mode" : "#{node['ambari-chef']['hive.transport.mode']}",
+      "yarn.ats.url" : "#{node['ambari-chef']['yarn.ats.url']}",
+      "yarn.resourcemanager.url" : "#{node['ambari-chef']['yarn.resourcemanager.url']}"
       }
     }
 }'
