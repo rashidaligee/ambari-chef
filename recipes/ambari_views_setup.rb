@@ -131,7 +131,7 @@ curl --user admin:admin -i -H 'X-Requested-By: ambari' -X POST #{node['ambari-ch
       "webhdfs.ha.namenode.rpc-address.nn2" : "#{node['ambari-chef']['webhdfs.ha.namenode.rpc-address.nn2']}",
       "webhdfs.ha.namenodes.list" : "#{node['ambari-chef']['webhdfs.ha.namenodes.list']}",
       "webhdfs.nameservices" : "#{node['ambari-chef']['webhdfs.nameservices']}",
-      "webhdfs.url" : "#{node['ambari-chef']['webhdfs.url']}",
+      "webhdfs.url" : "#{node['ambari-chef']['fs.defaultFS']}",
       "webhcat.hostname" : "#{node['ambari-chef']['webhcat.hostname']}",
       "webhcat.port" : "#{node['ambari-chef']['webhcat.port']}"
       }
@@ -158,7 +158,7 @@ curl --user admin:admin -i -H 'X-Requested-By: ambari' -X POST #{node['ambari-ch
       "webhdfs.ha.namenode.rpc-address.nn2" : "#{node['ambari-chef']['webhdfs.ha.namenode.rpc-address.nn2']}",
       "webhdfs.ha.namenodes.list" : "#{node['ambari-chef']['webhdfs.ha.namenodes.list']}",
       "webhdfs.nameservices" : "#{node['ambari-chef']['webhdfs.nameservices']}",
-      "webhdfs.url" : "#{node['ambari-chef']['hdfs.url']}",
+      "webhdfs.url" : "#{node['ambari-chef']['fs.defaultFS']}",
       "oozie.service.uri" : "#{node['ambari-chef']['oozie.service.uri']}",
       "hadoop.security.authentication" : "#{node['ambari-chef']['hadoop.security.authentication']}",
       "yarn.resourcemanager.address" : "#{node['ambari-chef']['yarn.resourcemanager.address']}"
