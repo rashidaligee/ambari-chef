@@ -7,7 +7,7 @@
 # create an instance of Files View
 bash 'create instance of Files view' do
   code <<-EOH
-    curl --user admin:admin -i -H 'X-Requested-By: ambari' -X POST http://localhost:8080/api/v1/views/FILES/versions/1.0.0/instances/FILES_NEW_INSTANCE \
+    curl --user admin:admin -i -H 'X-Requested-By: ambari' -X POST #{node['ambari-chef']['ambari_views_url']}/FILES/versions/1.0.0/instances/FILES_NEW_INSTANCE \
 --data '{
   "ViewInstanceInfo" : {
       "description" : "Files API",
@@ -32,7 +32,7 @@ end
 # create an instance of Hive View
 bash 'create instance of Hive view' do
   code <<-EOH
-curl --user admin:admin -i -H 'X-Requested-By: ambari' -X POST http://localhost:8080/api/v1/views/HIVE/versions/1.0.0/instances/HIVE_NEW_INSTANCE \
+curl --user admin:admin -i -H 'X-Requested-By: ambari' -X POST #{node['ambari-chef']['ambari_views_url']}/HIVE/versions/1.0.0/instances/HIVE_NEW_INSTANCE \
 --data '{
   "ViewInstanceInfo" : {
       "description" : "Hive View",
@@ -65,7 +65,7 @@ end
 # create an instance of Hive 1.5 View
 bash 'create instance of Hive 1.5 view' do
   code <<-EOH
-curl --user admin:admin -i -H 'X-Requested-By: ambari' -X POST http://localhost:8080/api/v1/views/HIVE/versions/1.5.0/instances/HIVE_NEW_INSTANCE_1_5 \
+curl --user admin:admin -i -H 'X-Requested-By: ambari' -X POST #{node['ambari-chef']['ambari_views_url']}/HIVE/versions/1.5.0/instances/HIVE_NEW_INSTANCE_1_5 \
 --data '{
   "ViewInstanceInfo" : {
       "description" : "Hive View 1.5",
@@ -98,7 +98,7 @@ end
 # create an instance of Tez View
 bash 'create instance of Tez view' do
   code <<-EOH
-curl --user admin:admin -i -H 'X-Requested-By: ambari' -X POST http://localhost:8080/api/v1/views/TEZ/versions/0.7.0.2.5.3.0-136/instances/TEZ_NEW_INSTANCE \
+curl --user admin:admin -i -H 'X-Requested-By: ambari' -X POST #{node['ambari-chef']['ambari_views_url']}/TEZ/versions/0.7.0.2.5.3.0-136/instances/TEZ_NEW_INSTANCE \
 --data '{
   "ViewInstanceInfo" : {
       "description" : "Tez View",
@@ -116,7 +116,7 @@ end
 # create an instance of Pig View
 bash 'create instance of Pig view' do
   code <<-EOH
-curl --user admin:admin -i -H 'X-Requested-By: ambari' -X POST http://localhost:8080/api/v1/views/PIG/versions/1.0.0/instances/PIG_NEW_INSTANCE \
+curl --user admin:admin -i -H 'X-Requested-By: ambari' -X POST #{node['ambari-chef']['ambari_views_url']}/PIG/versions/1.0.0/instances/PIG_NEW_INSTANCE \
 --data '{
   "ViewInstanceInfo" : {
       "description" : "Pig View",
@@ -143,7 +143,7 @@ end
 # create an instance of Workflow Manager View
 bash 'create instance of Workflow Manager view' do
   code <<-EOH
-curl --user admin:admin -i -H 'X-Requested-By: ambari' -X POST http://localhost:8080/api/v1/views/WORKFLOW_MANAGER/versions/1.0.0/instances/WF_NEW_INSTANCE \
+curl --user admin:admin -i -H 'X-Requested-By: ambari' -X POST #{node['ambari-chef']['ambari_views_url']}/WORKFLOW_MANAGER/versions/1.0.0/instances/WF_NEW_INSTANCE \
 --data '{
   "ViewInstanceInfo" : {
       "description" : "Workflow Manager View",

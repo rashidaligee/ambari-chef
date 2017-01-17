@@ -11,6 +11,8 @@ default['ambari-chef']['java_home'] = "/usr/lib/jvm/java-#{node[:java][:jdk_vers
 default['ambari-chef']['ambari_repo'] = 'http://public-repo-1.hortonworks.com/ambari/ubuntu14/2.x/updates/2.4.2.0'
 default['ambari-chef']['use_local_repo'] = 'false'
 
+default['ambari-chef']['ambari_views_url'] = 'http://localhost:8080/api/v1/views'
+
 default['ambari-chef']['webhdfs.client.failover.proxy.provider'] = 'org.apache.hadoop.hdfs.server.namenode.ha.ConfiguredFailoverProxyProvider'
 default['ambari-chef']['webhdfs.ha.namenode.http-address.nn1'] = 'u1201.ambari.apache.org:50070'
 default['ambari-chef']['webhdfs.ha.namenode.http-address.nn2'] = 'u1202.ambari.apache.org:50070'
