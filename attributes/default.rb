@@ -23,6 +23,7 @@ default['ambari-chef']['webhdfs.ha.namenode.rpc-address.nn2'] = 'u1202.ambari.ap
 default['ambari-chef']['webhdfs.ha.namenodes.list'] = 'nn1,nn2'
 default['ambari-chef']['webhdfs.nameservices'] = 'hacluster'
 default['ambari-chef']['webhdfs.url'] = 'webhdfs://hacluster'
+default['ambari-chef']['webhdfs.auth'] = 'auth=KERBEROS;proxyuser=ambari-server-mycluster'
 default['ambari-chef']['fs.defaultFS'] = 'hdfs://hacluster'
 default['ambari-chef']['hive.host'] =  'u1203.ambari.apache.org'
 default['ambari-chef']['hive.http.path'] = 'cliservice'
