@@ -161,6 +161,7 @@ curl --user admin:admin -i -H 'X-Requested-By: ambari' -X POST #{node['ambari-ch
       "webhdfs.ha.namenodes.list" : "#{node['ambari-chef']['webhdfs.ha.namenodes.list']}",
       "webhdfs.nameservices" : "#{node['ambari-chef']['webhdfs.nameservices']}",
       "webhdfs.url" : "#{node['ambari-chef']['fs.defaultFS']}",
+      "webhdfs.auth" : "#{node['ambari-chef']['webhdfs.auth']}",
       "oozie.service.uri" : "#{node['ambari-chef']['oozie.service.uri']}",
       "hadoop.security.authentication" : "#{node['ambari-chef']['hadoop.security.authentication']}",
       "yarn.resourcemanager.address" : "#{node['ambari-chef']['yarn.resourcemanager.address']}"
