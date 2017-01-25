@@ -132,7 +132,8 @@ curl --user admin:admin -i -H 'X-Requested-By: ambari' -X POST #{node['ambari-ch
       "webhdfs.ha.namenode.rpc-address.nn2" : "#{node['ambari-chef']['webhdfs.ha.namenode.rpc-address.nn2']}",
       "webhdfs.ha.namenodes.list" : "#{node['ambari-chef']['webhdfs.ha.namenodes.list']}",
       "webhdfs.nameservices" : "#{node['ambari-chef']['webhdfs.nameservices']}",
-      "webhdfs.url" : "#{node['ambari-chef']['fs.defaultFS']}",
+      "webhdfs.url" : "#{node['ambari-chef']['webhdfs.url']}",
+      "webhdfs.auth" : "#{node['ambari-chef']['webhdfs.auth']}",
       "webhcat.hostname" : "#{node['ambari-chef']['webhcat.hostname']}",
       "webhcat.port" : "#{node['ambari-chef']['webhcat.port']}"
       }
