@@ -14,6 +14,7 @@ ambari-server setup-security
  	> 3
  	> enter principal: ambari-server-mycluster@AMBARI.APACHE.ORG
  	> enter location of keytab: /etc/security/keytabs/ambari.server.keytab
+```
 6. Kerberos branch has Tez and Files view working fine. WFD and Pig should also work but not tested, Hive view is still to do
 
 Requirements
