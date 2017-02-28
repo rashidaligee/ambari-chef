@@ -4,8 +4,6 @@
 #
 # Copyright (c) 2016 Artem Ervits, All Rights Reserved.
 
-include_recipe 'ambari-chef::setattr'
-
 # dependencies
 %w(openssh-client wget curl unzip tar python2.7 openssl libpq5 postgresql postgresql-client-common postgresql-common ssl-cert).each do |pkg|
   package pkg do
