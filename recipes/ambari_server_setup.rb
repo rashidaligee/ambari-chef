@@ -34,9 +34,11 @@ service 'ambari-server status' do
   status_command 'ambari-server status'
 #  action :start
 end
-
-execute 'ambari-server start' do
-  # only_if 'template "#{config_dir}/ambari.prorperties"' 
+java_properties 'ambari.properties' do
+  properties_file "#{node['ambari-chef']['ambari_server_conf_dir']}/ambari.properties"
+  property 'server.startup.web.timeout', "#{node['ambari-chef']['ambari-server-startup-web-timeout']}"
+execute 'ambari-server start'
+  # only_if 'template "#{config_dir}/ambari.prorperties"'
   command 'ambari-server start'
   not_if 'ambari-server status'
 end

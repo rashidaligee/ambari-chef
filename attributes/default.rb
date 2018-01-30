@@ -2,6 +2,7 @@
 default['apt']['compile_time_update'] = 'true'
 
 # Ambari properties
+default['ambari-chef']['ambari-server-startup-web-timeout'] = '150'
 default['ambari-chef']['ambari_server_host'] = 'servername.ambari.apache.org'
 default['ambari-chef']['ambari_server_conf_dir'] = '/etc/ambari-server/conf/'
 default['ambari-chef']['ambari_agent_conf_dir'] = '/etc/ambari-agent/conf/'
