@@ -12,17 +12,36 @@ include_recipe 'ambari-chef::setattr'
   end
 end
 
-apt_repository 'ambari' do
-  uri node['ambari-chef']['ambari_repo']
-  components ['main']
-  distribution 'Ambari'
-  action :add
-
-  keyserver 'keyserver.ubuntu.com'
-  key 'B9733A7A07513CAD'
-
-#  not_if { node['ambari-chef']['use_local_repo'] }
+case node['platform']
+when 'ubuntu'
+  case node['platform_version']
+  when '14.04'
+    apt_repository 'ambari' do
+      uri node['ambari-chef']['ambari_repo_ubuntu_14']
+      components ['main']
+      distribution 'Ambari'
+      action :add
+      keyserver 'keyserver.ubuntu.com'
+      key 'B9733A7A07513CAD'
+    #  not_if { node['ambari-chef']['use_local_repo'] }
+    end
+  when '16.04'
+    apt_repository 'ambari' do
+      uri node['ambari-chef']['ambari_repo_ubuntu_16']
+      components ['main']
+      distribution 'Ambari'
+      action :add
+      keyserver 'keyserver.ubuntu.com'
+      key 'B9733A7A07513CAD'
+    #  not_if { node['ambari-chef']['use_local_repo'] }
+    end
+  else
+    raise "Platform #{node['platform']} #{node['platform_version']} is not supported"
+  end
+else
+  raise "Platform #{node['platform']} is not supported"
 end
+
 
 include_recipe 'ambari-chef::ambari_server_setup'
 #include_recipe 'ambari-chef::ambari_agent_setup'

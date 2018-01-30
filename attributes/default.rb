@@ -1,6 +1,15 @@
 # APT repository attributes
 default['apt']['compile_time_update'] = 'true'
 
+node.default['ambari-chef']['ambari_server_version'] = '2.6.1'
+
+case node.default['ambari-chef']['ambari_server_version']
+when '2.6.1'
+  node.default['ambari-chef']['ambari_repo_ubuntu_14'] = 'http://public-repo-1.hortonworks.com/ambari/ubuntu14/2.x/updates/2.6.1.0'
+  node.default['ambari-chef']['ambari_repo_ubuntu_16'] = 'http://public-repo-1.hortonworks.com/ambari/ubuntu16/2.x/updates/2.6.1.0'
+else
+  raise "Ambari Server #{node.default['ambari-chef']['ambari_server_version']} is not supported"
+end
 # Ambari properties
 default['ambari-chef']['ambari-server-startup-web-timeout'] = '150'
 default['ambari-chef']['ambari_server_host'] = 'servername.ambari.apache.org'
@@ -9,7 +18,7 @@ default['ambari-chef']['ambari_agent_conf_dir'] = '/etc/ambari-agent/conf/'
 default['ambari-chef']['ambari_database_password'] = 'bigdata'
 default['ambari-chef']['java_home'] = "/usr/lib/jvm/java-#{node[:java][:jdk_version]}-#{node[:java][:install_flavor]}-amd64"
 
-default['ambari-chef']['ambari_repo'] = 'http://public-repo-1.hortonworks.com/ambari/ubuntu14/2.x/updates/2.4.2.0'
+
 default['ambari-chef']['use_local_repo'] = 'false'
 
 default['ambari-chef']['ambari_views_url'] = 'http://default-ubuntu-1404:8080/api/v1/views'
