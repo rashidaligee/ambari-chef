@@ -5,6 +5,7 @@
 # Copyright (c) 2016 Artem Ervits, All Rights Reserved.
 
 package 'ambari-server' do
+  action :install
 end
 
 # template requires a directory created
@@ -14,19 +15,19 @@ directory config_dir do
   recursive true
 end
 
-# template "#{config_dir}ambari.properties" do
-#   source 'ambari.properties.erb'
-#   mode '0644'
-#   subscribes :run, 'package ambari-server'
-# end
+java_opts = ''
 
-# template "#{config_dir}password.dat" do
-#   source 'password.dat.erb'
-#   mode '0644'
-# end
+if node['ambari-chef']['java_home'] != 'embedded'
+  java_opts += "-j #{node['ambari-chef']['java_home']}"
+end
+
+log 'java_opts' do
+  message "java_opts #{java_opts}"
+  level :warn
+end
 
 execute 'ambari-server setup -s' do
-  command 'ambari-server setup -s'
+  command "ambari-server setup -s #{java_opts}"
 end
 
 service 'ambari-server status' do

@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-set :os , :family => 'ubuntu' , :release => 12.04
+set :os , :family => 'ubuntu' , :release => 14.04
 
 describe 'ambari-chef::default' do
  it 'ambari-server is installed' do
@@ -60,10 +60,10 @@ describe 'ambari-chef::default' do
  # end
 
 # tests whether oracle java 8 is installed
- describe file('/usr/lib/jvm/java-8-oracle-amd64') do
-   it { should be_directory }
-   it { should exist }
- end
+ # describe file('/usr/lib/jvm/java-8-oracle-amd64') do
+ #   it { should be_directory }
+ #   it { should exist }
+ # end
 
  describe file('/etc/ambari-server/conf/ambari.properties') do
    it { should exist }
